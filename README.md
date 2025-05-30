@@ -1,7 +1,9 @@
 # Makefile Runner
 
-A Visual Studio Code extension that adds a **Makefile Scripts** panel to the Explorer.  
+A Visual Studio Code extension that adds a **Makefile Scripts** panel to the Explorer.
 It automatically detects targets in a `Makefile` and lets you click to run them — just like the NPM Scripts panel.
+
+![Preview](https://github.com/user-attachments/assets/43b72ad3-c10a-44f5-a686-3b89a64e0ae0)
 
 ## Features
 
@@ -15,15 +17,5 @@ It automatically detects targets in a `Makefile` and lets you click to run them 
 2. Parses lines like: `build:`, `test:`, `run:`
 3. Adds clickable entries in the **Makefile** panel
 
-## Example
-
-```makefile
-build:
-	echo "Building project..."
-
-test:
-	echo "Running tests..."
-
-run:
-	echo "Running app..."
-```
+## Limitations
+- Doesn’t support .PHONY, dependencies, or multi-line targets (yet)

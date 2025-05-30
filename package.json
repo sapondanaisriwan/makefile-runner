@@ -1,14 +1,14 @@
 {
   "name": "makefile-runner",
-  "displayName": "Makefile Runner",
+  "displayName": "Makefile Panel Runner",
   "description": "A panel for listing and running Makefile targets",
   "version": "1.0.0",
-  "publisher": "Sapondanai Sriwan",
+  "publisher": "sapondanai-sriwan",
   "engines": {
     "vscode": "^1.100.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
