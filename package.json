@@ -2,7 +2,7 @@
   "name": "makefile-runner",
   "displayName": "Makefile Panel Runner",
   "description": "A panel for listing and running Makefile targets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "sapondanai-sriwan",
   "engines": {
     "vscode": "^1.100.0"
