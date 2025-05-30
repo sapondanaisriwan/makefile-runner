@@ -1,0 +1,95 @@
+{
+  "name": "makefile-runner",
+  "displayName": "Makefile Runner",
+  "description": "A panel for listing and running Makefile targets",
+  "version": "1.0.0",
+  "publisher": "Sapondanai Sriwan",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sapondanaisriwan/makefile-runner.git"
+  },
+  "homepage": "https://github.com/sapondanaisriwan/makefile-runner",
+  "icon": "icon.png",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "icon": "icon.png",
+          "id": "makefileScripts",
+          "name": "Make Runner",
+          "when": "workspaceFolderCount != 0"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "makefileRunner.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "makefileRunner.runTarget",
+        "title": "Run Make Target",
+        "icon": "$(play)"
+      },
+      {
+        "command": "makefileRunner.openTarget",
+        "title": "Open in Makefile"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "makefileRunner.refresh",
+          "when": "view == makefileScripts",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "makefileRunner.runTarget",
+          "when": "view == makefileScripts && viewItem == makeTarget",
+          "group": "inline",
+          "args": [
+            "${viewItem}"
+          ]
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "npx vsce package",
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3",
+    "ts-loader": "^9.5.2",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
