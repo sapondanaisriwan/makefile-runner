@@ -3,7 +3,7 @@
 A Visual Studio Code extension that adds a **Makefile Scripts** panel to the Explorer.
 It automatically detects targets in a `Makefile` and lets you click to run them — just like the NPM Scripts panel.
 
-![Preview](https://github.com/user-attachments/assets/43b72ad3-c10a-44f5-a686-3b89a64e0ae0)
+![Preview](./preview.png)
 
 ## Features
 
