@@ -1,4 +1,4 @@
-# Makefile Runner
+# Makefile Panel Runner
 
 A Visual Studio Code extension that adds a **Makefile Scripts** panel to the Explorer.
 It automatically detects targets in a `Makefile` and lets you click to run them — just like the NPM Scripts panel.
